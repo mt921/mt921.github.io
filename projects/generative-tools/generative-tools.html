@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marci Talbot</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./grid.css" />
+</head>
+
+<body>
+    <header>
+        <h1>
+            Generative Colour Tools
+        </h1>
+    </header>
+
+    <ul class="container">
+        <li class="description-block">
+            The overall aim of this project is to generate cohesive colour schemes that fit
+            into different categories e.g. harmonious, analogous, triadic etc.
+        </li>
+        <li class="description-block">
+            Several concepts were explored including the use of procedural generation, noise & random distributions, colour spaces
+            and colour classification i.e. with the use of TensorFlow's neural networks.
+        </li>
+        <li class="title-block">
+            1. Random Generation
+        </li>
+        <li class="description-block">
+            Initial investigations explored the concept of random generation.
+            This pattern generates varying strengths of blue in a grid structure.
+        </li>
+        <li id="random-grid">
+            <canvas id="canvas1"></canvas>
+        </li>
+        <!-- <li class="title-block">
+            2. RGB Colour
+        </li>
+        <li class="description-block">
+            Uniform random distribution of RGB values. This creates a colour scheme but it is not very cohesive or
+            visually appealing.
+        </li>
+        <li id="grid2">
+            <canvas id="canvas2"></canvas>
+        </li>
+        <li class="description-block">
+            This can be made slightly more visually appealing by providing an input value and then fluctuating the
+            colour value around that value.
+        </li>
+        <label for="R">R Value:</label>
+        <input type="number" id="R" name="R" value=100>
+        <label for="G">G Value:</label>
+        <input type="number" id="G" name="G" value=50>
+        <label for="B">B Value:</label>
+        <input type="number" id="B" name="B" value=255>
+        <li class="description-block">
+            And then also a level of variability (by how much each colour differs)
+        </li>
+        <label for="V">Variability:</label>
+        <input type="number" id="V" name="V" value=50>
+        <li id="grid2">
+            <canvas id="canvas3"></canvas>
+        </li>
+
+        <li class="title-block">
+            2. HSL & HSL Colour
+        </li>
+        <li class="description-block">
+            Working with HSL is easier to control hue and create more cohesion.
+            How do you convert between RGB & HSL?
+        </li>
+                <li id="grid2">
+                    <canvas id="canvas4"></canvas>
+                </li> -->
+
+    </ul>
+    <footer></footer>
+    <script type="module" src="sketch1.js"></script>
+    <script type="module" src="sketch2.js"></script>
+    <script type="module" src="sketch3.js"></script>
+    <script type="module" src="sketch4.js"></script>
+</body>
+
+</html>

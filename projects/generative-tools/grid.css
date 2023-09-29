@@ -1,0 +1,36 @@
+:root {
+  --width-1: 60vw;
+  --margin-unit: 1;
+}
+
+#random-grid {
+  border: 1px solid #ccc;
+  width: 100%;
+  position: relative;
+  height: calc(var(--width-1)*0.4);
+  margin-top: calc(var(--margin-unit)*1.2vw);
+  margin-bottom: calc(var(--margin-unit)*1.2vw);
+}
+
+#grid2 {
+  width: 100%;
+  position: relative;
+  height: calc(var(--width-1)*0.14);
+  margin-top: calc(var(--margin-unit)*1.2vw);
+  margin-bottom: calc(var(--margin-unit)*1.2vw);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --width-1: 90vw;
+    --margin-unit: 2.6;
+  }
+  #random-grid {
+    height: calc(var(--width-1)*1);
+  }
+}

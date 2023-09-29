@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;450;500;550;600;700&display=swap");
+
+:root {
+  --width-1: 60vw;
+  --margin-unit: 1;
+}
+
+body {
+  background-color: white;
+  font-family: "Inter";
+  /* font-size: 1.2vw; */
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+header {
+  font-family: "Inter";
+  color: #3938cd;
+  text-align: center;
+  justify-content: center;
+  margin-top: calc(var(--margin-unit)*10vw);
+  font-size: 1.5vw;
+}
+
+h1 {
+  font-weight: 450;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+footer {
+  margin-bottom: calc(var(--margin-unit)*15vw);
+}
+
+.container {
+  display: grid;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.title-block {
+  color: #3938cd;
+  font-family: "inter";
+  margin-top: calc(var(--margin-unit)*3vw);
+  font-weight: 400;
+  font-size: 2vw;
+}
+
+.subtitle-block {
+  color: #3938cd;
+  font-family: "inter";
+  margin-top: calc(var(--margin-unit)*2vw);
+  font-weight: 350;
+  font-size: 1.8vw;
+}
+
+.description-block {
+  /* background-color: white; */
+  color: black;
+  width: var(--width-1);
+  margin-top: calc(var(--margin-unit)*0.8vw);
+  margin-bottom: calc(var(--margin-unit)*0.8vw);
+}
+
+.item {
+  cursor: pointer;
+
+  width: var(--width-1);
+  padding: 0px;
+  margin-top: calc(var(--margin-unit)*0.6vw);
+  margin-bottom: calc(var(--margin-unit)*2vw);
+
+  text-align: center;
+  justify-content: center;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* adaptations for mobile devices */
+@media (max-width: 767px) {
+  :root {
+    --width-1: 90vw;
+    --margin-unit: 2.6;
+  }
+  header {
+    font-size: 3.9vw; /* Adjust to your desired font size */
+    margin-top: calc(var(--margin-unit)*5vw);
+  }
+  body {
+    /* font-size: 3.2vw; */
+    font-size: 1.25rem;
+  }
+  .title-block {
+    font-size: 4vw;
+  }
+  .footer {
+    margin-bottom: calc(var(--margin-unit)*2vw);
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marci Talbot</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>
+            Scrabble
+        </h1>
+    </header>
+
+    <ul class="container">
+        <li class="description-block">
+            The aim of this project was to build a complete web application (in the form of the board game Scrabble),
+            including the UI/UX, front-end and game logic.
+        </li>
+        <li class="title-block">
+            Initial Wireframe Sketches
+        </li>
+        <li class="description-block">
+            Current online Scrabble web applications were researched for inspiration. Simple wireframe sketches were
+            created to plan
+            out the general layout. The aim was to create a simple user interface with only the required components.
+        </li>
+        <li class="item"><img src="./resources/wireframes.png" alt="tag"></li>
+
+        <li class="title-block">
+            UI Development
+        </li>
+        <li class="description-block">
+            Several iterations for the user interface were developed using Figma. The main aims were to make the UI as
+            simple &
+            clear as possible by using strong shapes & high contrast.
+        </li>
+        <li class="item"><img src="./resources/graphic.png" alt="tag"></li>
+
+        <li class="title-block">
+            Game Logic
+        </li>
+        <li class="description-block">
+            The game logic can be broken down into several core problems which are addressed below. Solving these
+            problems required defining
+            data structures to store the information about the game state and
+            designing algorithms to solve the set out problems.
+        </li>
+        <li class="description-block">
+            The game logic can be broken down into several core problems which are addressed below. Solving these
+            problems
+            required defining
+            data structures to store the information about the game state and
+            designing algorithms to solve the set out problems.
+        </li>
+        <li class="subtitle-block">
+            Confirming connected tiles
+        </li>
+        <li class="description-block">
+            Users are able to place tiles on any position on the board, however when they submit a move this must be
+            validated. For a valid Scrabble game state all of the tiles on a given board must be connected. Therefore an
+            algorithm is
+            required to accept a valid state or reject an invalid state like the one below:
+        </li>
+        <li class="item"><img src="./resources/connected_tiles.png" alt="tag"></li>
+        <li class="description-block">
+            Several algorithms were researched to solve this problem. These could include structuring the information
+            into a graph and then performing a depth first search or breadth first search. Other methods could include
+            the use of pathfinding algorithms to identify routes through the tiles.
+        </li>
+        <li class="subtitle-block">
+            Sorting & Converting Connected Tiles into Words
+        </li>
+        <li class="description-block">
+            If it is confirmed that all of the tiles on the board are connected then the tiles must be sorted and
+            organised into the proposed words to be processed.
+        </li>
+        <li class="subtitle-block">
+            Checking Word Validity
+        </li>
+        <li class="description-block">
+            Once the tiles have been sorted and converted into words, these words must be cross-referenced with a
+            dictionary to ensure they are valid. After this has been fufilled the values associated with each tile
+            can be used to update player scores.
+        </li>
+
+
+    </ul>
+    <footer></footer>
+</body>
+
+</html>
