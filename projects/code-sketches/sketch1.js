@@ -11,10 +11,12 @@ const ctx = canvas.getContext("2d");
 
 const val1 = 0.25 * canvas.width;
 const val2 = 0.02 * canvas.width;
+const sat = 87.5;
+const brightness = 95;
 
 function sketchRays(x, y, width) {
   for (let i = 0; i < val1; i++) {
-    ctx.strokeStyle = hsvToRgb(x + i, 100, 100);
+    ctx.strokeStyle = hsvToRgb(x + i, sat, brightness);
     ctx.beginPath();
     ctx.moveTo(0, val2 * i);
     ctx.lineTo(x, y); // Ending point (x, y)
@@ -22,7 +24,7 @@ function sketchRays(x, y, width) {
   }
 
   for (let i = 0; i < val1; i++) {
-    ctx.strokeStyle = hsvToRgb(x - 1, 100, 100);
+    ctx.strokeStyle = hsvToRgb(x - 1, sat, brightness);
     ctx.beginPath();
     ctx.moveTo(val2 * i, 0);
     ctx.lineTo(x, y); // Ending point (x, y)
@@ -30,7 +32,7 @@ function sketchRays(x, y, width) {
   }
 
   for (let i = 0; i < val1; i++) {
-    ctx.strokeStyle = hsvToRgb(x + i, 100, 100);
+    ctx.strokeStyle = hsvToRgb(x + i, sat, brightness);
     ctx.beginPath();
     ctx.moveTo(width, val2 * i);
     ctx.lineTo(x, y); // Ending point (x, y)
@@ -38,7 +40,7 @@ function sketchRays(x, y, width) {
   }
 
   for (let i = 0; i < val1; i++) {
-    ctx.strokeStyle = hsvToRgb(x + i, 100, 100);
+    ctx.strokeStyle = hsvToRgb(x + i, sat, brightness);
     ctx.beginPath();
     ctx.moveTo(val2 * i, width);
     ctx.lineTo(x, y); // Ending point (x, y)
