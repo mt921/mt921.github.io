@@ -1,0 +1,10 @@
+/* Remove default controls */
+#video1::-webkit-media-controls,
+#video1::-webkit-media-controls-panel,
+#video1::-webkit-media-controls-play-button,
+#video1::-webkit-media-controls-volume-slider {
+  display: none !important;
+}
+
+/* Set custom styles for the video element */
+

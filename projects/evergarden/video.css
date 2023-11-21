@@ -1,0 +1,11 @@
+/* Remove default controls */
+#video1::-webkit-media-controls,
+#video1::-webkit-media-controls-panel,
+#video1::-webkit-media-controls-volume-slider
+
+/* Set custom styles for the video element */
+#video1 {
+  height: auto; /* Maintain aspect ratio */
+  /* Add other styling as desired */
+  margin: 0px;
+}
