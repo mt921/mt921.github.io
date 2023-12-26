@@ -93,15 +93,21 @@ footer {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.cover-styling:hover {
-  transform: scale(1.01);
-  transition: transform 0.3s ease;
+.cover-styling,
+.hover {
+  transition: transform 0.3s ease; /* Transition property for scaling */
 }
 
+.cover-styling:hover,
 .hover:hover {
-  transform: scale(1.01);
-  transition: transform 0.3s ease;
+  transform: scale(1.01); /* Scale up on hover */
 }
+
+.cover-styling:not(:hover),
+.hover:not(:hover) {
+  transform: scale(1); /* Return to the original size */
+}
+
 
 .skill-boxes {
   display: flex;
@@ -137,6 +143,7 @@ img {
   width: var(--width-1);
   /* Add other styling as desired */
 }
+
 
 
 .youtube-video {
