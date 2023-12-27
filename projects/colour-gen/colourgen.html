@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marci Talbot</title>
+    <link rel="stylesheet" href="./updated_style.css" />
+    <link rel="stylesheet" href="./app/style.css" />
+    <link rel="stylesheet" href="./video.css" />
+    <script src="./app/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 id="main-title">
+            Colour Generator
+        </h1>
+    </header>
+
+    <ul class="container">
+        <li id="sub-title" class="title-block">
+            Concept
+        </li>
+
+        <li class="description-block">
+            The aim of this project was to design a tool to generate cohesive colour schemes.
+            Colours are generated using a colour input by the user. In order to facilitate these inputs I designed a user interface.
+            This involved learning about responsive design and CSS.
+        </li>
+
+        <li class="description-block">
+            Test it out:
+        </li>
+
+        <div class="main-container">
+            <!-- Your web application code goes here -->
+            <!-- For example, if it's a section with an ID "webAppSection" -->
+            <section id="webAppSection">
+                <div id="app-body">
+                    <div class="container">
+                        <div class="card">
+                            <div class="wrapper">
+                                R <input class="slider" type="range" min="50" max="240" id="red" value="0" step="5"
+                                    oninput="update()">
+                            </div>
+                            <div class="wrapper">
+                                G <input class="slider" type="range" min="50" max="240" id="green" value="76" step="5"
+                                    oninput="update()">
+                            </div>
+                            <div class="wrapper">
+                                B <input class="slider" type="range" min="50" max="240" id="blue" value="217" step="5"
+                                    oninput="update()">
+                            </div>
+                            <div>
+                                Variability:
+                            </div>
+                            <div class="wrapper">
+                                <input class="slider" type="range" min="10" max="60" id="variability" value="0" step="5"
+                                    oninput="update()">
+                            </div>
+                        </div>
+                        <div class="card" id="card">
+                            <div class="container2">
+                                <div class="display" id="colour1"></div>
+                                <div class="display" id="colour2"></div>
+                                <div class="display" id="colour3"></div>
+                                <div class="display" id="colour4"></div>
+                                <div class="display" id="colour5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <li class="description-block">
+            I would like to expand this application to generate more complex colour schemes and user inputs.
+            I would like to implement the use of TensorFlow.js to identify successful colour schemes and adapt these to generate new ones.
+        </li>
+
+
+    </ul>
+    <footer></footer>
+</body>
+
+</html>

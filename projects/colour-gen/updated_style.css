@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;450;500;550;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;450;500;700&display=swap');
+
+:root {
+  --width-1: 60vw;
+  --margin-unit: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: white;
+  font-family: "Inter";
+  /* font-size: 1.2vw; */
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+header {
+  font-family: "Poppins";
+  color: #004cda;;
+  text-align: center;
+  justify-content: center;
+  margin-top: calc(var(--margin-unit) * 10vw);
+  font-size: 2vw;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+footer {
+  margin-bottom: calc(var(--margin-unit) * 15vw);
+}
+
+.container {
+  display: grid;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.title-block {
+  color: #004cda;
+  font-family: "Poppins";
+  margin-top: calc(var(--margin-unit) * 4vw);
+  margin-bottom: 3px;
+  font-weight: 450;
+  font-size: 2.5vw;
+}
+
+.subtitle-block {
+  color: #3a4be1;
+  font-family: "inter";
+  margin-top: calc(var(--margin-unit) * 2vw);
+  font-weight: 350;
+  font-size: 1.8vw;
+}
+
+.description-block {
+  /* background-color: white; */
+  color: black;
+  width: var(--width-1);
+  margin-top: calc(var(--margin-unit) * 0.8vw);
+  margin-bottom: calc(var(--margin-unit) * 0.8vw);
+}
+
+.item-box {
+  width: var(--width-1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+}
+
+.item {
+  width: var(--width-1);
+  margin-top: calc(var(--margin-unit) * 0.6vw);
+  margin-bottom: calc(var(--margin-unit) * 5vw);
+
+  text-align: center;
+  justify-content: center;
+}
+
+.cover-styling {
+  border-radius: 3px; /* Rounded corners */
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cover-styling,
+.hover {
+  transition: transform 0.3s ease; /* Transition property for scaling */
+}
+
+.cover-styling:hover,
+.hover:hover {
+  transform: scale(1.01); /* Scale up on hover */
+}
+
+.cover-styling:not(:hover),
+.hover:not(:hover) {
+  transform: scale(1); /* Return to the original size */
+}
+
+
+.skill-boxes {
+  display: flex;
+}
+
+.skill-box {
+  height: 10px;
+  background-color: #5466ff;
+  margin: 2px 2px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.005);
+  border-radius: 3px; /* Rounded corners */
+}
+
+.skill-name {
+  color: white;
+  font-family: "Inter";
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#video1 {
+  height: 40vw; /* Maintain aspect ratio */
+  width: var(--width-1);
+  /* Add other styling as desired */
+}
+
+
+
+.youtube-video {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 800px; /* Set a maximum width */
+  height: 300px; /* Adjust the height as needed */
+  border-radius: 5px; /* Rounded corners */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  margin: 20px 0; /* Adjust margins */
+}
+
+/* Example hover effect */
+.youtube-video:hover {
+  /* transform: scale(1.005);  */
+  /* transition: transform 0.3s ease;  */
+}
+
+/* adaptations for mobile devices */
+@media (max-width: 767px) {
+  :root {
+    --width-1: 90vw;
+    --margin-unit: 2.6;
+  }
+  header {
+    font-size: 3.9vw; /* Adjust to your desired font size */
+    margin-top: calc(var(--margin-unit) * 5vw);
+  }
+  body {
+    /* font-size: 3.2vw; */
+    font-size: 1.25rem;
+  }
+  .title-block {
+    font-size: 6vw;
+  }
+  .subtitle-block {
+    font-size: 4.5vw;
+  }
+  .footer {
+    margin-bottom: calc(var(--margin-unit) * 2vw);
+  }
+  .skill-name {
+    font-size: 1.1rem;
+  }
+}
