@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marci Talbot</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./app/style.css" />
+    <script type="module" src="./app/main.js"></script>
+    <script type="module" src="./app/main2.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.9.1/math.js"></script>
+
+<body>
+    <header>
+        <h1 id="main-title">
+            Evolution Simulation
+        </h1>
+    </header>
+
+    <ul class="container">
+        <li id="sub-title" class="title-block">
+            Concept
+        </li>
+
+        <li class="description-block">
+            This is a snippet of some of my work from summer 2023 during Imperial College's Undergraduate Research
+            Opportunities Programme <a target=”_blank” href="https://www.imperial.ac.uk/urop/">[UROP]</a>.
+        </li>
+
+        <li class="description-block">
+            In this 8 week project I constructed a web-based simulation model to test how creatures or 'agents' would
+            behave under different conditions.
+            The overall aim of this project was to initialise a set of randomly generated agents that would eventually
+            converge to distinct behaviours in order to navigatedifferent environments and maximise rewards.
+
+        </li>
+
+        <li id="sub-title" class="title-block">
+            Defining Agent Structure
+        </li>
+
+        <li class="description-block">
+            In order to create the simulation two key data structures are created in the form of a matrix and column
+            vector:
+        </li>
+
+        <div class="spacer"></div>
+
+        <div id="latex-display">
+            \[
+            \mathbf{G} = \begin{bmatrix}
+            g_{00} & g_{01} & \cdots & g_{0n} \\
+            g_{10} & g_{11} & \cdots & g_{1n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            g_{m0} & g_{m1} & \cdots & g_{mn} \\
+            \end{bmatrix}, \quad \quad \quad
+
+            \mathbf{B} = \begin{bmatrix}
+            b_0 \\
+            b_1 \\
+            \vdots \\
+            b_m \\
+            \end{bmatrix}
+            \]
+        </div>
+
+        <div class="spacer"></div>
+
+        <li class="description-block">
+            <b>G</b> represents the inherent genetic information (DNA) of each agent, it does not change in between each
+            time
+            step but will be important for evolution. <b>B</b>
+            represents the dynamic brain state of the agent, typically changing in between each time step.
+        </li>
+
+        <li id="sub-title" class="title-block">
+            Time Steps
+        </li>
+
+        <div class="spacer"></div>
+
+        <li class="description-block">
+            To perform a time-step Matrix <b>G</b> is multiplied by <b>B</b>. The output is passed through an activation
+            function to introduce non-linearity and constrain the values within a specific range.
+            The brain structure is updated.
+        </li>
+
+        <div class="spacer"></div>
+
+        <div id="mathjax-example">
+            <div>
+                \( \mathbf{B}_{t+1} = f(\mathbf{G} \cdot \mathbf{B}_t) \)
+            </div>
+
+            <div>
+                \[
+                \begin{bmatrix}
+                b_0 \\
+                b_1 \\
+                \vdots \\
+                b_m \\
+                \end{bmatrix}_{t+1}
+                =
+                f
+                \left(
+                \begin{bmatrix}
+                g_{00} & g_{01} & \cdots & g_{0n} \\
+                g_{10} & g_{11} & \cdots & g_{1n} \\
+                \vdots & \vdots & \ddots & \vdots \\
+                g_{m0} & g_{m1} & \cdots & g_{mn} \\
+                \end{bmatrix}
+                \begin{bmatrix}
+                b_0 \\
+                b_1 \\
+                \vdots \\
+                b_m \\
+                \end{bmatrix}_{t}
+                \right)
+                \]
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <li class="description-block">
+            Several elements of <b>B</b> are assigned as output neurons and used to extract signals i.e. will cause the
+            agent to move forward, rotate etc. Similarly several neurons can be assigned as inputs, allowing the agent
+            to take in information about the environment.
+        </li>
+
+
+        <li id="sub-title" class="title-block">
+            Programming Behaviours
+        </li>
+
+        <li class="description-block">
+            In order to prove useful behaviours were possible, several case studies of useful behaviour were defined.
+            In these simple simulations agents can only rotate or speed up and the only information they can access is
+            either their position, speed, direction or distance from other agents or simulation boundaries.
+        </li>
+
+
+        <li id="sub-title" class="title-block">
+            Example 1
+        </li>
+
+        <li class="description-block">
+            <a href="#" onclick="window.location.reload(); return false;">Click here to refresh the page</a> to see the
+            agents regenerate and move to accompolish a pre-defined task.
+        </li>
+
+        <div class="spacer"></div>
+        <div class="main-container">
+            <!-- Your web application code goes here -->
+            <!-- For example, if it's a section with an ID "webAppSection" -->
+            <section id="webAppSection">
+                <div id="app-body">
+                    <div class="container">
+                        <div class="card">
+
+                            <div id="put here" class="container1"></div>
+
+                        </div>
+                    </div>
+            </section>
+        </div>
+
+        <div class="spacer"></div>
+
+        <li class="description-block">
+            In this example agents will always line up at the centre of the simulation.
+            This is due to their specific genetic structure and input and output neuron assignments.
+        </li>
+
+
+
+        <li id="sub-title" class="title-block">
+            Example 2
+        </li>
+
+        <li class="description-block">
+            <a href="#" onclick="window.location.reload(); return false;">Click here to refresh</a> to see the
+            agents regenerate and form clusters.
+        </li>
+
+        <div class="spacer"></div>
+        <div class="main-container">
+            <!-- Your web application code goes here -->
+            <!-- For example, if it's a section with an ID "webAppSection" -->
+            <section id="webAppSection">
+                <div id="app-body">
+                    <div class="container">
+                        <div class="card">
+
+                            <div id="put here2" class="container1"></div>
+
+                        </div>
+                    </div>
+            </section>
+        </div>
+
+        <div class="spacer"></div>
+
+        <li class="description-block">
+            From these examples it is possible to see that useful agent behaviours and structures are possible.
+
+        </li>
+
+        <li id="sub-title" class="title-block">
+            Training Behaviours
+        </li>
+
+        <li class="description-block">
+            The agents in the previous simulations all have the same pre-defined structures, however the next challenge
+            is to be
+            able to randomly generate agents and train them to achieve these specfic goals.
+        </li>
+
+
+        <li class="description-block">
+            In order to tackle this challenge a tournament simulation architecture is defined where agents are randomly
+            generated, the system is allowed to progress for a set number of timesteps and then agents are evaluated.
+        </li>
+
+        <li class="description-block">
+            The DNA structures of most successful agents can be extracted, mutated and used to create new agents in the
+            next tournament run. This process draws on the ideas of genetic algorithms and can be used to eventually
+            train agents to aquire the behaviours shown above.
+        </li>
+
+        <li id="sub-title" class="title-block">
+            Continuous Simulation
+        </li>
+
+        <li class="description-block">
+            The goal of this project is to initialise a set of randomly generated agents that eventually achieve useful
+            behaviours without being manually trained. In order to achieve this a continuous simulation architecture was
+            created where agents are free to move about, consume smaller agents in the system, clone themselves or grow.
+        </li>
+
+
+        <li class="description-block">
+            The goal of this project is to initialise a set of randomly generated agents that eventually achieve useful
+            behaviours without being manually trained. In order to achieve this a continuous simulation architecture was
+            created where agents are free to move about, consume smaller agents in the system, clone themselves or grow.
+        </li>
+    </ul>
+    <footer></footer>
+</body>
+
+
+</html>
