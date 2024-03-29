@@ -8,8 +8,10 @@
     <title>Marci Talbot</title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="./app/style.css" />
+    <link rel="stylesheet" href="./simulator/style.css" />
     <script type="module" src="./app/main.js"></script>
     <script type="module" src="./app/main2.js"></script>
+    <script type="module" src="./simulator/main.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -36,7 +38,7 @@
             In this 8 week project I constructed a web-based simulation model to test how creatures or 'agents' would
             behave under different conditions.
             The overall aim of this project was to initialise a set of randomly generated agents that would eventually
-            converge to distinct behaviours in order to navigatedifferent environments and maximise rewards.
+            converge to distinct behaviours in order to navigate different environments and maximise rewards.
 
         </li>
 
@@ -45,8 +47,7 @@
         </li>
 
         <li class="description-block">
-            In order to create the simulation two key data structures are created in the form of a matrix and column
-            vector:
+            In order to create the simulation two key structures are defined:
         </li>
 
         <div class="spacer"></div>
@@ -72,9 +73,8 @@
         <div class="spacer"></div>
 
         <li class="description-block">
-            <b>G</b> represents the inherent genetic information (DNA) of each agent, it does not change in between each
-            time
-            step but will be important for evolution. <b>B</b>
+            <b>G</b> represents the genetic information (DNA) of each agent, it does not change in between each
+            time step but will be important for evolution. <b>B</b>
             represents the dynamic brain state of the agent, typically changing in between each time step.
         </li>
 
@@ -82,12 +82,10 @@
             Time Steps
         </li>
 
-        <div class="spacer"></div>
-
         <li class="description-block">
-            To perform a time-step Matrix <b>G</b> is multiplied by <b>B</b>. The output is passed through an activation
+            To perform a time step Matrix <b>G</b> is multiplied by <b>B</b>. The output is passed through an activation
             function to introduce non-linearity and constrain the values within a specific range.
-            The brain structure is updated.
+            This allows the agent's brain structure to be updated.
         </li>
 
         <div class="spacer"></div>
@@ -128,9 +126,10 @@
         <div class="spacer"></div>
 
         <li class="description-block">
-            Several elements of <b>B</b> are assigned as output neurons and used to extract signals i.e. will cause the
-            agent to move forward, rotate etc. Similarly several neurons can be assigned as inputs, allowing the agent
-            to take in information about the environment.
+            Each elements of <b>B</b> is a neuron which will have a level of actiavtion.
+            Neurons can be assigned as inputs or outputs, where outputs will trigger agents to perform an action (e.g.
+            move, rotate etc.) and inputs will allow the agent to take in information about the environment.
+
         </li>
 
 
@@ -139,11 +138,10 @@
         </li>
 
         <li class="description-block">
-            In order to prove useful behaviours were possible, several case studies of useful behaviour were defined.
+            In order to prove useful behaviours were possible, several pre-programmed case studies were created.
             In these simple simulations agents can only rotate or speed up and the only information they can access is
             either their position, speed, direction or distance from other agents or simulation boundaries.
         </li>
-
 
         <li id="sub-title" class="title-block">
             Example 1
@@ -151,7 +149,7 @@
 
         <li class="description-block">
             <a href="#" onclick="window.location.reload(); return false;">Click here to refresh the page</a> to see the
-            agents regenerate and move to accompolish a pre-defined task.
+            agents regenerate and move to achieve a specific task.
         </li>
 
         <div class="spacer"></div>
@@ -216,19 +214,19 @@
         </li>
 
         <li class="description-block">
-            The agents in the previous simulations all have the same pre-defined structures, however the next challenge
-            is to be
-            able to randomly generate agents and train them to achieve these specfic goals.
+            The agents in the previous simulations all have the same pre-defined structures. The next challenge is to
+            randomly generate agents and train them to achieve these specfic goals.
         </li>
 
 
         <li class="description-block">
-            In order to tackle this challenge a tournament simulation architecture is defined where agents are randomly
-            generated, the system is allowed to progress for a set number of timesteps and then agents are evaluated.
+            The simulation is adpated to follow a tournament architecture where agents are randomly generated, allowed
+            to progress for a number of time steps and then evaluated.
         </li>
 
         <li class="description-block">
-            The DNA structures of most successful agents can be extracted, mutated and used to create new agents in the
+            The DNA structures of the most successful agents can be extracted, mutated and used to create new agents in
+            the
             next tournament run. This process draws on the ideas of genetic algorithms and can be used to eventually
             train agents to aquire the behaviours shown above.
         </li>
@@ -238,17 +236,121 @@
         </li>
 
         <li class="description-block">
-            The goal of this project is to initialise a set of randomly generated agents that eventually achieve useful
-            behaviours without being manually trained. In order to achieve this a continuous simulation architecture was
-            created where agents are free to move about, consume smaller agents in the system, clone themselves or grow.
+            The overarching goal of this project is to initialise a set of randomly generated agents that eventually
+            achieve useful or interesting behaviours without manual input. In order to achieve this a continuous
+            simulation architecture was created where agents are free to move about, consume smaller 'prey' agents in
+            the
+            system, clone themselves or grow. This allows for multiple generations to progress without user input.
         </li>
 
 
         <li class="description-block">
-            The goal of this project is to initialise a set of randomly generated agents that eventually achieve useful
-            behaviours without being manually trained. In order to achieve this a continuous simulation architecture was
-            created where agents are free to move about, consume smaller agents in the system, clone themselves or grow.
+            A snippet of this model can be seen below:
         </li>
+
+        <div class="spacer"></div>
+
+        <div class="main-container">
+            <!-- Your web application code goes here -->
+            <!-- For example, if it's a section with an ID "webAppSection" -->
+            <section id="webAppSection">
+                <div id="app-body">
+                    <div class="container">
+                        <div class="card">
+
+                            <div id="put here3" class="container1"></div>
+
+                        </div>
+                    </div>
+            </section>
+        </div>
+
+        <div class="spacer"></div>
+
+        <li class="description-block">
+            Due to the large amount of data and high simulation speeds required to observe long-term behaviour it was
+            difficult to identify any patterns.
+        </li>
+
+        <li class="description-block">
+            If you would like you can <a href="#" onclick="window.location.reload(); return false;">hit refresh</a> to
+            re-initalise the system and stay and watch for a while, but I
+            can't promise that anything interesting will happen.
+        </li>
+
+        <li id="sub-title" class="title-block">
+            Additional Research, Theory & Skills Developed
+        </li>
+        <li class="description-block">
+            Towards the end of the project <a target=”_blank” href="https://doc.rust-lang.org/book/">Rust</a> was
+            utilised to compile web assembly code (WASM) with the aim of speeding up the simulation.
+            However, unfortunately it was still difficult to identify any convergent behaviours.
+        </li>
+
+        <div class="spacer"></div>
+
+        Additional Skills Developed Throughout the Project:
+        <ul>
+            <li>Utilised Developer Tools (e.g. Chrome & Firefox) to analyse performance</li>
+            <li>Experimented with visualistions using p5.js, Canvas.js, D3.js </li>
+            <li>Developed server-side programming skills with Node, Express & JSON </li>
+            <li>Learnt how to use Git & GitHub (properly) for the first time!</li>
+        </ul>
+        <div class="spacer"></div>
+
+
+        <!-- <ul>
+            <li>Learnt a new programming language (Rust Lang) and learnt how to compile Web Assembly Code (WASM)</li>
+            <li>Gained a better understanding of Developer tools e.g. Chrome & Firefox developer tools</li>
+            <li>Experimented with visualistions using p5.js, Canvas.js, D3.js </li>
+            <li>Learnt more about server-side programming with Node, Express & JSON </li>
+            <li>Learnt how to use Git & GitHub (properly) for the first time!</li>
+        </ul> -->
+
+
+
+        <li class="description-block">
+            The underlying structures of the agents draw inspiration from artificial neural networks (including
+            some aspects of recurrent neural networks) and Markov Chains which were theories I researched in more depth
+            throughout the
+            project.
+        </li>
+
+        <li id="sub-title" class="title-block">
+            Next steps
+        </li>
+
+        <li class="description-block">
+            Although the project is mostly complete I would like to revisit some aspects again when I have more time:
+
+            Although the project is mostly complete I would like to come back to it again when I have more time to work
+            more at implementing more Rust functionality (also experiment with C++ which uses a different type of web
+            compiling).
+
+            <div class="spacer"></div>
+            <ul>
+                <li>Further Rust Development and Integration.</li>
+                <li>Experiment with C/C++ Emscripten Web Compilation as an alternative to Rust.</li>
+                <li>Update UI for improved simulation hyperparameter tuning.</li>
+                <li>Experiment with alternative server-side approaches e.g. Python's Flask, which would be beneficial
+                    for post-processing simulation results i.e. with libraries such as Pandas, Scikit-learn etc.</li>
+                <li>Develop methods to classify unlabelled agents e.g. k-means clustering.</li>
+            </ul>
+
+        <li id="sub-title" class="title-block">
+            Acknowledgements
+        </li>
+
+        <li class="description-block">
+            Although this was mostly an independent project it was made possible through Imperial College's UROP
+            scheme and was supervised by Dr. Freddie Page who provided many helpful insights across the 8 weeks.
+        </li>
+
+
+
+        </li>
+
+
     </ul>
     <footer></footer>
 </body>

@@ -1,0 +1,24 @@
+/* 
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+
+.container1 {
+    display: flex;
+    align-items: center;
+    
+} */
+
+.spacer {
+    height: 25px;
+}
+
+canvas {
+    border: 1px solid #002e84; /* Set border style, width, and color */
+}
